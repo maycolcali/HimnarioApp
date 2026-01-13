@@ -72,6 +72,10 @@ document.addEventListener('DOMContentLoaded', function () {
 document.getElementById("year").textContent = new Date().getFullYear();
 
 /*================= Filtro de búsqueda =================*/
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
+
 const inputBuscar = document.getElementById('buscar_himno');
 const contenedorHimnos = document.getElementById('himnos');
 
@@ -107,7 +111,6 @@ inputBuscar.addEventListener('input', () => {
     himno.titulo.toLowerCase().includes(texto) ||
     himno.id.toString().includes(texto)
   );
-
   renderLista(filtrados);
 });
 
