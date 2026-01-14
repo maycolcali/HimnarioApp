@@ -8,10 +8,14 @@ const CACHE_NAME = 'HimnarioApp',
     './css/porNombre.css',
     './css/porNumero.css',
     './css/portada.css',
+    './css/categories.css',
+    './css/settings.css',
 
     './js/script.js',
     './js/number.js',
     './js/hymn-view.js',
+    './js/categories.js',
+    './js/settings.js',
     './js/jquery-3.6.0.js',
 
     './regist_serviceWorker.js',
@@ -26,8 +30,10 @@ const CACHE_NAME = 'HimnarioApp',
 
     './buscarPorNombre.html',
     './buscarPorNumero.html',
+    './categories.html',
+    './hymns.html',
     './portada.html',
-    './hymns.html'
+    './settings.html'
   ]
 
 self.addEventListener('install', e => {
