@@ -21,7 +21,7 @@ const CACHE_NAME = 'HimnarioApp',
     './regist_serviceWorker.js',
     './pwa/images/icons/icon-512x512.png',
     './pwa/images/icons/icon-72x72.png',
-    './data/hymns.json',
+    '/data/hymns.json',
 
     './img/icon.png',
     './img/imagen4.jpg',
@@ -73,7 +73,7 @@ self.addEventListener('fetch', e => {
       }
       return fetch(e.request).catch(() => {
         if (e.request.url.includes('hymns.json')) {
-          return caches.match('./data/hymns.json');
+          return caches.match('/data/hymns.json');
         }
       })
     })
