@@ -78,6 +78,11 @@
         }, 50
       );
     });
+
+    window.history.replaceState(null, '', window.location.href);
+    window.addEventListener('popstate', function (event) {
+      window.location.replace('index.html');
+    });
   </script>
 </body>
 </html>

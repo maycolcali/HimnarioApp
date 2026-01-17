@@ -61,10 +61,20 @@ self.addEventListener('activate', event => {
 });
 
 self.addEventListener('fetch', event => {
-  if (event.request.url.endsWith('/data/hymns.json')) {
+  if (event.request.url.includes('hymns.json')) {
     event.respondWith(
-      caches.match('./data/hymns.json')
-        .then(res => res || fetch(event.request))
+      caches.match(event.request).then(cachedResponse => {
+        if (cachedResponse) {
+          return cachedResponse;
+        }
+        return fetch(event.request).then(networkResponse => {
+          return caches.open(CACHE_NAME).then(cache => {
+            cache.put(event.request, networkResponse.clone());
+            return networkResponse;
+          });
+        });
+      }).catch(() => {
+      })
     );
     return;
   }
