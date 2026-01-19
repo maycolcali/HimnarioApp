@@ -5,6 +5,12 @@ function applyHymnScale() {
 
 applyHymnScale();
 
+document.addEventListener('visibilitychange', () => {
+    if (!document.hidden) {
+        applyHymnScale();
+    }
+});
+
 window.addEventListener('pageshow', () => {
     applyHymnScale();
 });
