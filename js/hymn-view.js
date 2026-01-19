@@ -1,5 +1,13 @@
-const hymnScale = parseFloat(localStorage.getItem('hymnScale')) || 1;
-document.documentElement.style.setProperty('--hymn-scale', hymnScale);
+function applyHymnScale() {
+    const hymnScale = parseFloat(localStorage.getItem('hymnScale')) || 1;
+    document.documentElement.style.setProperty('--hymn-scale', hymnScale);
+}
+
+applyHymnScale();
+
+window.addEventListener('pageshow', () => {
+    applyHymnScale();
+});
 
 const resultContainer = document.querySelector('.hymnObtained');
 

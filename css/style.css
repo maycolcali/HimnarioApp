@@ -64,9 +64,9 @@ html, body {
   max-width: 100% !important;
   overflow-x: hidden !important;
 }
-html, .body_general {
+.body_general {
   width: 100%;
-  height: 100%;
+  height: 100svh;
   max-width: 100%;
   overflow-x: hidden;
 }
